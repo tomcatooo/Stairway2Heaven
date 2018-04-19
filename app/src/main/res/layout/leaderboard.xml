@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="213dp"
+            android:layout_height="41dp"
+            android:text="Name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:paddingLeft="20dp"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="383dp"
+            android:layout_height="41dp"
+            android:paddingLeft="20dp"
+            android:text="Score"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="Score" />
+
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/score1"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/score2"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/name3"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name4"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name5"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name6"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name7"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name8"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name9"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="9"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/name10"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:layout_row="10"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/score3"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score4"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score5"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score6"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="6"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score7"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="7"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score8"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="8"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score9"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="9"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+        <TextView
+            android:id="@+id/score10"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_row="10"
+            android:paddingLeft="20dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+    </GridLayout>
+
+</RelativeLayout>

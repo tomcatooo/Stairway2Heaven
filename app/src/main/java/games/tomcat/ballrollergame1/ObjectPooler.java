@@ -1,0 +1,86 @@
+package games.tomcat.ballrollergame1;
+
+import java.util.ArrayList;
+
+/**
+ * Created by Tom on 19/02/2018.
+ */
+
+public class ObjectPooler {
+
+    //Plat5x5[] plat5x5Pool;
+    //SpireMiddle[] SpireMiddlePool;
+    //PlatformThin[] ThinPool;
+    //PlatformSuperThin[] SuperThinPool;
+
+    ArrayList<Plat5x5> plat5x5Pool;
+    ArrayList<SpireMiddle> SpireMiddlePool;
+    ArrayList<PlatformThin> ThinPool;
+    ArrayList<PlatformSuperThin> SuperThinPool;
+
+    /*
+
+    public ObjectPooler(int id, int number){
+        if ( id == 1) {
+            plat5x5Pool = new Plat5x5[number];
+            for (int i = 0; i < number; i++) {
+                plat5x5Pool[i] = new Plat5x5(0.0f, 0.0f, 0.0f);
+            }
+        }
+        else if (id == 2){
+            SpireMiddlePool = new SpireMiddle[number];
+            for (int i = 0; i < number; i++){
+                SpireMiddlePool[i] = new SpireMiddle(0.0f, 0.0f, 0.0f);
+            }
+        }
+        else if (id ==3){
+            ThinPool = new PlatformThin[number];
+            for (int i = 0; i < number; i++){
+                ThinPool[i] = new PlatformThin(0.0f, 0.0f, 0.0f);
+            }
+        }
+        else if(id ==4){
+            SuperThinPool = new PlatformSuperThin[number];
+            for(int i = 0; i < number; i++){
+                SuperThinPool[i] = new PlatformSuperThin(0.0f, 0.0f, 0.0f);
+            }
+        }
+
+    }
+    */
+
+
+
+    //change from arraysx to list to allow growth
+    public ObjectPooler(int id, int number){
+        if ( id == 1) {
+            plat5x5Pool = new ArrayList<Plat5x5>(number);
+            for (int i = 0; i < number; i++) {
+                plat5x5Pool.add(i, new Plat5x5(0.0f, 0.0f, 0.0f));
+            }
+        }
+        else if (id == 2){
+            SpireMiddlePool = new ArrayList<SpireMiddle>(number);
+            for (int i = 0; i < number; i++){
+                SpireMiddlePool.add(i, new SpireMiddle(0.0f, 0.0f, 0.0f));
+            }
+        }
+        else if (id ==3){
+            ThinPool = new ArrayList<PlatformThin>(number);
+            for (int i = 0; i < number; i++){
+                ThinPool.add(i, new PlatformThin(0.0f, 0.0f, 0.0f));
+            }
+        }
+        else if(id ==4){
+            SuperThinPool = new ArrayList<PlatformSuperThin>(number);
+            for(int i = 0; i < number; i++){
+                SuperThinPool.add(i, new PlatformSuperThin(0.0f, 0.0f, 0.0f));
+            }
+        }
+
+    }
+
+
+
+
+}
