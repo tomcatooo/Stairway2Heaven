@@ -27,14 +27,24 @@ public class PlayerController {
     float pitch;
     float roll;
     float azi;
+    boolean sfx;
+
+    Config config;
+    float jumpspeed;
+
 
 
 
     public PlayerController(Context context) {
         mSensorFusion = new SensorFusion(context);
         player = new Player();
+        config = new Config(context);
+        config.loadConfig();
+        sfx = config.sfx;
+
 
         soundPool = new SoundPool.Builder().setMaxStreams(1).build();
+        //http://www.orangefreesounds.com/boing-sound-effect/
         mainSound = soundPool.load(context, R.raw.boing, 1);
         amg = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
     }
@@ -59,14 +69,17 @@ public class PlayerController {
 
     public void playSound(int sound) {
 
-        soundPool.play(sound, 1, 1, 1, 0, 1f);
+       if(sfx) soundPool.play(sound, 1, 1, 1, 0, 1f);
     }
 
 
 
-    public void checkJump2() {
+    public void checkJump() {
         if (Player.grounded) {
             if (Player.jump) {
+                if(!player.firstJump){
+                    player.firstJump = true;
+                }
                 playSound(1);
                 Player.initY = Player.ballY;
                 System.out.println("initY - " + Player.initY);
@@ -77,7 +90,16 @@ public class PlayerController {
         } else {
 
             if (Player.jumping) {
-                if (Player.ballY < Player.initY + 4.f) {
+                jumpspeed = player.zSpeed;
+                //in case of negative speed (in reverse)
+                if(jumpspeed < 0){
+                    jumpspeed = jumpspeed * -1;
+                }
+                if(jumpspeed < 0.05){
+                    jumpspeed = 0.05f;
+                }
+                System.out.println("jumpspeed = " +jumpspeed);
+                if (Player.ballY < Player.initY + (25 * jumpspeed)) {
                     Player.ballY = Player.ballY + 0.10000000000000000f;
                 } else {
                     Player.jumping = false;

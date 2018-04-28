@@ -16,26 +16,49 @@ public class Config {
     String filename = "config.txt";
     String fileContents;
     Context context;
+    String[] config;
 
     boolean hard;
+    boolean music, sfx;
+    int texture;
 
     public Config(Context context){
         this.context = context;
         hard = false;
+        music = true;
+        sfx = true;
+        texture = 1;
     }
 
     public void loadConfig(){
-        String hardMode = readFromFile(context, filename);
-        if(hardMode.equalsIgnoreCase("true")){
+        config = new String[4];
+        String configString = readFromFile(context, filename);
+        System.out.println("Config string = " + configString);
+        config = configString.split("~");
+        if(config[0].equalsIgnoreCase("true")){
             hard = true;
         }
-        else if(hardMode.equalsIgnoreCase("false")){
+        else if(config[0].equalsIgnoreCase("false")){
             hard = false;
         }
+        if(config[1].equalsIgnoreCase("true")){
+            music = true;
+        }
+        else if(config[1].equalsIgnoreCase("false")){
+            music = false;
+        }
+        if(config[2].equalsIgnoreCase("true")){
+            sfx = true;
+        }
+        else if(config[2].equalsIgnoreCase("false")){
+            sfx = false;
+        }
+        texture = Integer.valueOf(config[3]);
     }
 
     public void saveConfig(){
-        String config = Boolean.toString(hard);
+        String config = Boolean.toString(hard) + "~" +Boolean.toString(music) +"~"+ Boolean.toString(sfx)+ "~" + texture;
+        System.out.println("Config = " + config);
         writeStringAsFile(config, context, filename);
     }
 

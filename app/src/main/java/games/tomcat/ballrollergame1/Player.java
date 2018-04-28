@@ -27,6 +27,8 @@ public class Player {
 
     public static float initZSpeed, initXSpeed;
 
+    boolean firstJump = false;
+
 
     public Player(){
 

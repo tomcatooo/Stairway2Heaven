@@ -7,6 +7,81 @@
     android:layout_height="match_parent">
 
 
+    <Button
+        android:id="@+id/setColourBTN"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/SFXSwitch"
+        android:layout_below="@+id/imageView"
+        android:text="Set Colour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="224dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_marginTop="228dp"
+        android:paddingLeft="5dp"
+        android:text="Ball texture"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textColor="@color/colorPrimaryDark"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <Switch
+        android:id="@+id/SFXSwitch"
+        android:layout_width="69dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/hardSwitch"
+        android:layout_alignTop="@+id/textView10"
+        android:checked="false"
+        tools:checked="false"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="224dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/name"
+        android:layout_marginTop="175dp"
+        android:paddingLeft="5dp"
+        android:text="Sound FX"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textColor="@color/colorPrimaryDark"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <Switch
+        android:id="@+id/musicSwitch"
+        android:layout_width="69dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/hardSwitch"
+        android:layout_alignTop="@+id/textView9"
+        android:checked="false"
+        tools:checked="false"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="224dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/name"
+        android:layout_marginTop="133dp"
+        android:paddingLeft="5dp"
+        android:text="Music"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textColor="@color/colorPrimaryDark"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="60dp" />
+
     <EditText
         android:id="@+id/name"
         android:layout_width="233dp"
@@ -30,6 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/name"
+        android:layout_marginEnd="12dp"
         android:text="Set Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name"
@@ -61,6 +137,14 @@
         android:textColor="@color/colorPrimaryDark"
         tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="60dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="113dp"
+        android:layout_height="47dp"
+        android:layout_alignEnd="@+id/SFXSwitch"
+        android:layout_alignTop="@+id/textView15"
+        android:background="@android:color/holo_green_light" />
 
 
 </RelativeLayout>

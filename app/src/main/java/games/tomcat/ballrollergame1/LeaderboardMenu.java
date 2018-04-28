@@ -21,6 +21,7 @@ public class LeaderboardMenu extends AppCompatActivity {
 
     private TextView name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
     private TextView score1, score2,score3,score4,score5,score6,score7,score8,score9,score10;
+    private TextView title;
 
     String filename = "leaderboard";
     FileOutputStream outputStream;
@@ -91,6 +92,8 @@ public class LeaderboardMenu extends AppCompatActivity {
         leaderboard.bubbleSort(lead);
 
 
+        title = (TextView) findViewById(R.id.leaderboardTitle);
+
         name1 = (TextView) findViewById(R.id.name1);
         name2 = (TextView) findViewById(R.id.name2);
         name3 = (TextView) findViewById(R.id.name3);
@@ -112,6 +115,13 @@ public class LeaderboardMenu extends AppCompatActivity {
         score8 = (TextView) findViewById(R.id.score8);
         score9 = (TextView) findViewById(R.id.score9);
         score10 = (TextView) findViewById(R.id.score10);
+
+        if(config.hard){
+            title.setText("Leaderboard (hard)");
+        }
+        else{
+            title.setText("Leaderboard");
+        }
 
         name1.setText(lead[0].name);
         score1.setText(String.valueOf(lead[0].score));

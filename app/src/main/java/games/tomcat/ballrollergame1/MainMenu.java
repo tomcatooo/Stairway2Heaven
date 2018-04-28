@@ -49,6 +49,15 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        Button helpBTN = (Button)findViewById(R.id.helpBTN);
+        helpBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HelpMenu.class);
+                startActivity(intent);
+            }
+        });
+
         name = (TextView)findViewById(R.id.nameText);
         name1 = currentPlayer.getPlayer();
         name.setText("Welcome, " + name1);

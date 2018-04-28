@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends Activity  implements SensorEventListener2 {
+public class MainActivity extends Activity {
 
     /** Hold a reference to our GLSurfaceView */
     private MyGLSurfaceView mGLSurfaceView;
@@ -27,11 +27,13 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
     private float yPos, yAccel, yVel = 0.0f;
     private float xMax, yMax;
 
-    private TextView text;
+    private TextView text, name;
 
     Context activityContext;
+    CurrentPlayer currentPlayer;
     int count = 0;
     int score = 0;
+    Config config;
 
 
     @Override
@@ -65,9 +67,16 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
             mGLSurfaceView.setEGLContextClientVersion(2);
             mRenderer = new MainRenderer(activityContext);
             mGLSurfaceView.setRenderer(mRenderer, displayMetrics.density);
+            config = new Config(activityContext);
+            currentPlayer = new CurrentPlayer(activityContext);
+            config.loadConfig();
+            String player = currentPlayer.getPlayer();
 
             text = (TextView) findViewById(R.id.scoreText);
             text.setText("Score = ");
+            name = (TextView) findViewById(R.id.nameText);
+            name.setText(player);
+
 
             Thread t = new Thread() {
                 @Override
@@ -106,7 +115,7 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
             //xMax = (float) size.x - 100;
             //yMax = (float) size.y - 100;
 
-            sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+            //sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         }
         else
         {
@@ -126,7 +135,7 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
         super.onResume();
         mGLSurfaceView = (MyGLSurfaceView) findViewById(R.id.glSurfaceViewID);
         mGLSurfaceView.onResume();
-        mRenderer.mediaPlayer.start();
+        if(config.music) mRenderer.mediaPlayer.start();
 
     }
 
@@ -137,20 +146,21 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
         super.onPause();
         mGLSurfaceView = (MyGLSurfaceView) findViewById(R.id.glSurfaceViewID);
         mGLSurfaceView.onPause();
-        mRenderer.mediaPlayer.pause();
+        if(config.music) mRenderer.mediaPlayer.pause();
     }
 
     protected void onStart(){
         super.onStart();
-        sensorManager.registerListener((SensorEventListener) this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
+        //sensorManager.registerListener((SensorEventListener) this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
     }
 
     protected void onStop() {
         super.onStop();
-        sensorManager.unregisterListener((SensorEventListener) this);
+        //sensorManager.unregisterListener((SensorEventListener) this);
     }
 
 
+    /*
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
@@ -183,8 +193,9 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
         } else if (yPos < 0) {
             yPos = 0;
         }
-        */
+
     }
+    */
 
     public TextView getScoreText(){
         TextView  text1 = (TextView) findViewById(R.id.scoreText);
@@ -193,6 +204,7 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
     }
 
 
+    /*
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
@@ -202,4 +214,5 @@ public class MainActivity extends Activity  implements SensorEventListener2 {
     public void onFlushCompleted(Sensor sensor) {
 
     }
+    */
 }

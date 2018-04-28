@@ -52,7 +52,7 @@ public Platform(){
         platYArray[0] = platformY;
         platZArray[0] = platformZ;
         landed = false;
-        Random rand = new Random();
+        //Random rand = new Random();
         finalRand = rand.nextFloat() * randomRange;
         initX = platXArray[0];
         moveEast = true;
@@ -90,29 +90,7 @@ public Platform(){
         platXArray[0] = platformX;
         platYArray[0] = platformY;
         platZArray[0] = platformZ;
+        finalRand = rand.nextFloat() * randomRange;
     }
 
-    public void movePlatformEast(){
-    if (platXArray[0] < initX + finalRand && moveEast) {
-        for (int i = 0; i < numOfCubes; i++) {
-            platXArray[i] = platXArray[i] + 0.1f;
-        }
-    }
-    else{
-        moveEast = false;
-        moveWest = true;
-    }
-    }
-
-    public void movePlatformWest(){
-        if (platXArray[0] > initX - finalRand && moveWest) {
-            for (int i = 0; i < numOfCubes; i++) {
-                platXArray[i] = platXArray[i] - 0.1f;
-            }
-        }
-        else{
-            moveWest = false;
-            moveEast = true;
-        }
-    }
 }
